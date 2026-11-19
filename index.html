@@ -1,1 +1,229 @@
 
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b3d33">
+<title>13واں سالانہ دستارِ فضیلت پروگرام</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#f8f1e1;--paper:#fffaf0;--em:#0b3d33;--em2:#14634f;--gold:#b8862b;--gold2:#e3bd62;--ink:#1d2b26;--rose:#8c2447;--font:'Noto Nastaliq Urdu','Jameel Noori Nastaleeq',serif;--num:'Cinzel',serif;color-scheme:light}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--ivory);color:var(--ink);line-height:2.1;overflow-x:hidden;padding-bottom:76px}
+body.lock{overflow:hidden;height:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+body::before{content:"";position:fixed;inset:0;z-index:-1;opacity:.5;background:radial-gradient(circle at 80% 0,#fff 0,transparent 40%),repeating-linear-gradient(45deg,rgba(184,134,43,.07) 0 1px,transparent 1px 22px),repeating-linear-gradient(-45deg,rgba(184,134,43,.07) 0 1px,transparent 1px 22px)}
+.gt{background:linear-gradient(100deg,#8a6a1c 10%,#f6dc8e 35%,#c99a38 55%,#fff0b8 66%,#9b7425 92%);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--gold);animation:sh 6s linear infinite}
+@keyframes sh{0%{background-position:240% 0}100%{background-position:-140% 0}}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* splash: two emerald doors */
+#splash{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--em);transition:opacity .6s .9s,visibility 0s 1.5s}
+#splash.out{opacity:0;visibility:hidden;pointer-events:none}
+.door{position:absolute;top:0;bottom:0;width:50.5%;z-index:1;background:radial-gradient(circle at 50% 40%,#1a7a62,var(--em) 70%);transition:transform 1.2s cubic-bezier(.77,0,.18,1)}
+.door.l{left:0;border-right:2px solid var(--gold2)}.door.r{right:0;border-left:2px solid var(--gold2)}
+#splash.out .door.l{transform:translateX(-101%)}#splash.out .door.r{transform:translateX(101%)}
+.sp{position:relative;z-index:2;padding:20px;max-width:480px;color:var(--ivory);transition:opacity .4s}
+#splash.out .sp{opacity:0}
+.arch{width:170px;height:210px;margin:0 auto 6px;border:2px solid var(--gold2);border-radius:85px 85px 8px 8px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative;box-shadow:0 0 40px rgba(227,189,98,.35);opacity:0;animation:up 1s .2s forwards}
+.arch::after{content:"";position:absolute;inset:8px;border:1px solid rgba(227,189,98,.5);border-radius:77px 77px 4px 4px}
+.sp>*:not(.arch){opacity:0;animation:up 1s forwards}
+.s1{font-size:19px;animation-delay:.8s!important}.s2{font-size:clamp(28px,8vw,40px);line-height:2;font-weight:700;animation-delay:1.2s!important}
+.s3{font-size:16px;color:#d8e8df;animation-delay:1.6s!important}.s4{display:inline-block;margin-top:10px;padding:3px 22px;border:1px solid var(--gold2);border-radius:40px;color:var(--gold2);animation-delay:2s!important}
+.enter{margin-top:24px;border:0;cursor:pointer;font-family:var(--font);font-size:19px;font-weight:700;color:#2a1c00;padding:9px 44px;border-radius:50px;background:linear-gradient(135deg,#fff0b0,#e3bd62 50%,#b8862b);animation:up 1s 2.4s forwards,pl 2.2s 3.4s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(227,189,98,.6)}70%,100%{box-shadow:0 0 0 18px rgba(227,189,98,0)}}
+.skip{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));left:14px;z-index:3;background:none;border:1px solid rgba(227,189,98,.6);color:var(--gold2);font-family:var(--num);font-size:12px;padding:2px 14px;border-radius:20px;cursor:pointer}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:90;display:flex;justify-content:space-between;align-items:center;padding:calc(9px + env(safe-area-inset-top,0px)) 16px 9px;background:rgba(11,61,51,.96);color:var(--gold2);border-bottom:2px solid var(--gold)}
+.top b{font-size:16px}.live{display:flex;align-items:center;gap:7px;font-family:var(--num);font-size:12px}
+.live i{width:8px;height:8px;border-radius:50%;background:#ff6b9a;animation:bl 1.8s infinite}
+@keyframes bl{0%{box-shadow:0 0 0 0 #ff6b9a}70%,100%{box-shadow:0 0 0 9px rgba(255,107,154,0)}}
+
+/* hero: mihrab arch */
+.hero{padding:26px 16px 0;text-align:center}
+.mih{position:relative;max-width:420px;margin:auto;padding:34px 18px 120px;color:var(--ivory);border-radius:210px 210px 0 0;border:3px solid var(--gold);background:radial-gradient(ellipse at 50% 0,#1d8a6f,var(--em2) 40%,var(--em));box-shadow:0 20px 50px rgba(11,61,51,.35)}
+.mih::before{content:"";position:absolute;inset:9px;border:1px solid rgba(227,189,98,.6);border-radius:200px 200px 0 0;pointer-events:none}
+.mih .lamp{font-size:34px;display:inline-block;animation:sw 4s ease-in-out infinite;transform-origin:top}
+@keyframes sw{50%{transform:rotate(6deg)}}
+.pill{display:block;font-size:15px;color:var(--gold2)}
+.mih .im{font-size:18px}
+.mih h1{font-size:clamp(32px,9.5vw,46px);line-height:2.15}
+.mih h2{font-size:28px;line-height:2}
+.seal{position:relative;width:128px;height:128px;margin:-62px auto 0;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--paper);border:3px solid var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:2}
+.seal::before{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px dashed var(--gold);animation:spin 30s linear infinite}
+.seal .n{font-family:var(--num);font-size:42px;line-height:1.3;font-weight:700}
+.seal span{font-size:13px;color:var(--em);line-height:1.6;text-align:center}
+.main{padding:0 14px;max-width:520px;margin:auto}
+
+/* sections */
+.st{display:flex;align-items:center;gap:10px;justify-content:center;text-align:center;font-size:23px;margin:34px 0 14px;line-height:2;color:var(--em)}
+.st::before,.st::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.st::after{transform:scaleX(-1)}
+.card{position:relative;text-align:center;padding:16px 14px;border-radius:20px;background:var(--paper);border:1px solid rgba(184,134,43,.55);box-shadow:0 8px 24px rgba(11,61,51,.1)}
+.card::before{content:"";position:absolute;inset:5px;border:1px solid rgba(184,134,43,.25);border-radius:15px;pointer-events:none}
+.cdbox{margin-top:50px;background:linear-gradient(160deg,var(--em2),var(--em));color:var(--ivory);font-size:17px}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px;direction:ltr}
+.cd div{background:rgba(0,0,0,.25);border:1px solid rgba(227,189,98,.5);border-radius:14px;padding:6px 2px}
+.cd b{display:block;font-family:var(--num);font-size:26px;color:var(--gold2);line-height:1.4}
+.cd span{display:block;font-size:12px;color:#d8e8df;direction:rtl;line-height:1.7}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g2 h3{font-size:21px;line-height:2}.g2 p{font-size:14px;color:#55655f;line-height:1.9}
+.venue{margin-top:12px;font-size:15px;line-height:2.2}.venue b{color:var(--em);font-size:17px}
+.big{margin-bottom:12px;padding:18px 12px}
+.tg{display:inline-block;font-size:13px;padding:0 16px;border-radius:20px;background:var(--gold);color:#fff;font-weight:700}
+.big h3{font-size:22px;line-height:2.1;margin-top:4px;color:var(--em)}
+.big small{display:block;font-size:14px;color:var(--rose);line-height:1.9}
+.big.dk{background:linear-gradient(160deg,var(--em2),var(--em));border-color:var(--gold2)}.big.dk h3{color:var(--ivory)}.big.dk small{color:var(--gold2)}.big.dk .tg{background:var(--gold2);color:#2a1c00}
+.big.rs{background:linear-gradient(160deg,#a02a55,#5e1230);border-color:var(--gold2)}.big.rs h3{color:#fff}.big.rs small{color:#ffe3a4}.big.rs .tg{background:var(--gold2);color:#2a1c00}
+.list{display:grid;gap:9px}
+.nm{display:flex;align-items:center;gap:12px;padding:8px 14px;border-radius:16px;background:var(--paper);border:1px solid rgba(184,134,43,.4);border-right:5px solid var(--gold);box-shadow:0 4px 12px rgba(11,61,51,.07)}
+.nm i{font-style:normal;width:42px;height:42px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;background:linear-gradient(135deg,var(--em2),var(--em))}
+.nm b{display:block;font-size:17px;line-height:1.9;font-weight:600}
+.nm span{display:block;font-size:12.5px;color:var(--rose);line-height:1.7}
+.hf{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hf span{padding:4px;border-radius:14px;font-size:16px;text-align:center;line-height:2;color:var(--ivory);background:linear-gradient(135deg,var(--em2),var(--em));border:1px solid var(--gold)}
+.note{margin-top:14px;font-size:19px;color:var(--rose);font-weight:600}
+.foot{margin:34px -14px 0;padding:26px 16px 30px;text-align:center;border-radius:30px 30px 0 0;background:linear-gradient(180deg,var(--em2),#06241e);color:var(--ivory);border-top:3px solid var(--gold)}
+.foot h3{color:var(--gold2);font-size:18px}.foot .big-n{font-size:22px;line-height:2.1}
+.nums{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.nums a{flex:1;min-width:150px;max-width:220px;background:linear-gradient(135deg,#fff0b0,#e3bd62 50%,#b8862b);color:#2a1c00;padding:6px 8px;border-radius:16px;font-weight:700}
+.nums b{display:block;font-family:var(--num);font-size:17px;line-height:1.7;direction:ltr}.nums small{display:block;font-size:12px;line-height:1.7}
+.sup{margin-top:14px;font-size:14px;line-height:2.1;color:#d8e8df}.sup b{color:var(--gold2);display:block;font-size:17px}
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:95;display:flex;justify-content:space-around;padding:8px 0 calc(10px + env(safe-area-inset-bottom,0px));background:rgba(11,61,51,.97);border-top:2px solid var(--gold)}
+.nav button{border:0;background:none;color:var(--ivory);font-family:var(--font);font-size:14px;cursor:pointer;line-height:1.8;padding:0 14px}.nav button.on{color:var(--gold2)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body class="lock">
+
+<section id="splash" aria-label="تعارفی صفحہ">
+  <div class="door l"></div><div class="door r"></div>
+  <button class="skip" id="skipBtn" type="button">Skip</button>
+  <div class="sp">
+    <div class="arch" aria-hidden="true">🕌</div>
+    <div class="s1 gt">اُسوہ اسلامک سنٹر کے زیر اہتمام</div>
+    <h1 class="s2 gt">دستارِ فضیلت پروگرام<br>و تقسیمِ انعامات</h1>
+    <p class="s3">ایمان افروز 13واں سالانہ</p>
+    <div class="s4">20 نومبر 2026 • بعد نماز مغرب</div><br>
+    <button class="enter" id="enterBtn" type="button">دعوت نامہ کھولیں</button>
+  </div>
+</section>
+
+<div class="top"><b>🕌 اُسوہ اسلامک سنٹر</b><div class="live"><i></i>LIVE</div></div>
+
+<header class="hero" id="top">
+  <div class="mih">
+    <span class="lamp" aria-hidden="true">🪔</span>
+    <span class="pill">✦ اُسوہ اسلامک سنٹر کے زیر اہتمام ✦</span>
+    <p class="im">ایمان افروز</p>
+    <h1 class="gt">13واں سالانہ<br>دستارِ فضیلت پروگرام</h1>
+    <h2 class="gt">و تقسیمِ انعامات</h2>
+  </div>
+  <div class="seal"><div class="n gt">13</div><span>20 نومبر 2026<br>جمعۃ المبارک</span></div>
+</header>
+
+<div class="main">
+  <div class="card cdbox rv">
+    <p>بعد نماز مغرب</p>
+    <div class="cd" aria-label="پروگرام میں باقی وقت">
+      <div><b id="cdD">00</b><span>دن</span></div><div><b id="cdH">00</b><span>گھنٹے</span></div>
+      <div><b id="cdM">00</b><span>منٹ</span></div><div><b id="cdS">00</b><span>سیکنڈ</span></div>
+    </div>
+  </div>
+
+  <h2 class="st gt rv">تاریخ و مقام</h2>
+  <div class="g2 rv">
+    <div class="card"><h3 class="gt">20 نومبر</h3><p>2026</p></div>
+    <div class="card"><h3 class="gt">جمعۃ المبارک</h3><p>بعد نماز مغرب</p></div>
+  </div>
+  <div class="card venue rv"><b>جامع مسجد توحید اہلحدیث</b><br>آبادی مہر زیریگلی نمبر 9 گلہ گوگا پہلوان والا<br>نوشہرہ روڈ، گوجرانوالہ</div>
+
+  <h2 class="st gt rv">مہمانِ گرامی</h2>
+  <div class="card big dk rv"><span class="tg">طلباء کی دستار بندی کریں گے</span><h3>حضرۃ مولانا شیخ الحدیث<br>پروفیسر قاری محمد سعید کلیروی<br>حفظہ اللہ</h3><small>نائب امیر مرکزی جمعیۃ اہلحدیث پاکستان</small></div>
+  <div class="card big rs rv"><span class="tg">خصوصی خطاب</span><h3>حضرت مولانا حافظ<br>محمد یوسف پسروری<br>حفظہ اللہ</h3><small>ترجمان مسلک اہلحدیث • شیر پنجاب • مقرر الانقلاب<br>خطیب لاہور</small></div>
+  <div class="card big rv"><span class="tg">اختتامی کلمات و دعا</span><small style="margin-top:4px">حضرۃ مولانا شیخ الحدیث پروفیسر قاری محمد سعید کلیروی</small></div>
+
+  <div id="groups"></div>
+
+  <h2 class="st gt rv">خوش نصیب حفاظ کرام</h2>
+  <div class="card rv">
+    <p style="font-size:14px;color:var(--rose);margin-bottom:8px">اُسوہ اسلامک سنٹر سے سند فراغت حاصل کرنے والے</p>
+    <div class="hf">
+      <span>حافظ بلال عمران</span><span>حافظ علیان آصف</span><span>حافظ یحییٰ عبدالشکور</span><span>حافظ عبدالمنان زید</span>
+      <span>حافظ خذیفہ آصف</span><span>حافظ طہ شفیق</span><span>حافظ زید نوید اسلم</span><span>حافظ آفاق قاسم</span>
+    </div>
+  </div>
+  <div class="card note rv">خواتین کیلئے پردے کا انتظام ہوگا</div>
+
+  <footer class="foot rv" id="contact">
+    <h3>منجانب</h3>
+    <p class="big-n gt">طلباء ادارہ ھذا<br>حافظ عبدالسلام جمیل</p>
+    <div class="nums">
+      <a href="tel:03237469453"><b>0323-7469453</b><small>رابطہ</small></a>
+      <a href="tel:03158113700"><b>0315-8113700</b><small>رابطہ</small></a>
+    </div>
+    <p class="sup"><b>خصوصی تعاون</b>اجوا ریسٹورنٹ اینڈ پکوان سنٹر<br>اندرون عالم چوک حافظ آباد روڈ گوجرانوالہ<br><a href="tel:03216406536" style="color:var(--gold2);font-family:var(--num);direction:ltr;display:inline-block">0321 6406536</a></p>
+  </footer>
+</div>
+
+<nav class="nav" aria-label="مینو">
+  <button class="on" type="button" data-go="top">🏠 ہوم</button>
+  <button type="button" data-go="contact">📞 رابطہ</button>
+  <button type="button" id="share">📤 شیئر</button>
+</nav>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+/* Names: [heading, role label, icon, [names]] */
+var G=[
+['بانیان','بانی','🌟',['الحاج میاں محمد شفیع سیٹھی','حاجی محمد نذیر پہلوان','حاجی محمد یوسف','حافظ قطب محمد نوین']],
+['زیر صدارت','زیر صدارت','🌸',['محترم جناب حاجی ارشد انصاری','محترم جناب ذکاء اللہ انصاری']],
+['زیر نگرانی','زیر نگرانی','🛡️',['محترم جناب محمد جمیل مہر']],
+['مہمانانِ خصوصی','','⭐',[['جناب لالہ عصمت اللہ انصاری','سیاسی رہنما • سابقہ چیئرمین'],['صاحبزادہ حافظ عبدالرحمن مغل','مہمانِ خصوصی']]],
+['خصوصی آمد','خصوصی آمد','💎',['محترم حاجی محمد طارق سیٹھی','چوہدری حاجی محمد زاہد نعیم سندھو','قاری محمد صالح حفظہ اللہ','قاری محمد اسحاق شہباز','حافظ صفی الرحمن عاصم','مولانا ثاقب منیر','حضرۃ مولانا مجیب الرحمن قاسم']],
+['مہمانانِ ذی وقار','مہمانِ ذی وقار','🌹',['حاجی عنایت اللہ مہر','حاجی زاہد سرفراز','حاجی ریاض منہاس','حاجی محمد آصف مہر','ماسٹر محمد غضنفر اقبال','چوہدری محمد نوید مہر','خلیق الرحمن مغل','محمد سعید بھٹی','ذوالنیب حسن ایڈووکیٹ']],
+['نقابت • تلاوت • حمد و نعت','','🎙️',[['حافظ اظہر یوسف','نقابت'],['زبیر عمر عزیز','تلاوت'],['حافظ طہ شفیق','تلاوت'],['حافظ محمد یحییٰ','حمد و نعت • معلم ادارہ ھذا']]]
+];
+var h='';
+G.forEach(function(g){
+  h+='<h2 class="st gt rv">'+g[0]+'</h2><div class="list">';
+  g[3].forEach(function(n){
+    var nm=typeof n==='string'?n:n[0], rl=typeof n==='string'?g[1]:n[1];
+    h+='<div class="nm rv"><i>'+g[2]+'</i><div><b>'+nm+'</b><span>'+rl+'</span></div></div>';
+  });
+  h+='</div>';
+});
+$('groups').innerHTML=h;
+
+var splash=$('splash'),done=false;
+function enter(){if(done)return;done=true;splash.classList.add('out');document.body.classList.remove('lock');window.scrollTo(0,0);setTimeout(function(){splash.style.display='none'},1600)}
+$('enterBtn').addEventListener('click',enter);$('skipBtn').addEventListener('click',enter);setTimeout(enter,12000);
+
+var rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});rv.forEach(function(el){io.observe(el)})}
+else{rv.forEach(function(el){el.classList.add('in')})}
+
+var target=new Date('2026-11-20T17:00:00+05:00').getTime();
+function pad(n){return n<10?'0'+n:''+n}
+function tick(){var s=Math.floor(Math.max(0,target-Date.now())/1000);
+$('cdD').textContent=pad(Math.floor(s/86400));$('cdH').textContent=pad(Math.floor(s%86400/3600));$('cdM').textContent=pad(Math.floor(s%3600/60));$('cdS').textContent=pad(s%60)}
+tick();setInterval(tick,1000);
+
+document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){
+var t=$(b.getAttribute('data-go'));if(t)t.scrollIntoView({behavior:'smooth'});
+document.querySelectorAll('.nav button').forEach(function(x){x.classList.remove('on')});b.classList.add('on')})});
+$('share').addEventListener('click',function(){
+var d={title:'دستارِ فضیلت پروگرام',text:'13واں سالانہ دستارِ فضیلت پروگرام - 20 نومبر 2026 بعد نماز مغرب',url:location.href};
+if(navigator.share){navigator.share(d).catch(function(){})}
+else if(navigator.clipboard){navigator.clipboard.writeText(location.href).catch(function(){})}});
+})();
+</script>
+</body>
+</html>
